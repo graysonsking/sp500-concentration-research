@@ -1,4 +1,3 @@
-[README.md](https://github.com/user-attachments/files/30569185/README.md)
 # S&P 500 Concentration Risk and Alternative Weighting
 
 M.S. capstone research. Tests whether alternative weighting methodologies can restore diversification to the S&P 500 as market cap concentration has risen.
