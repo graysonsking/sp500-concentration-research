@@ -12,9 +12,9 @@
 | Minimum variance (Ledoit-Wolf, capped) | Complete |
 | Risk parity | Complete |
 | Momentum | Complete |
-| Fundamental | Interface complete, needs Compustat pull |
+| Fundamental | Complete |
 | FinBERT sentiment | Interface complete, scoring pipeline in progress |
-| Results and figures | In progress |
+| Results and figures | Complete |
 | Written thesis | In progress |
 
 ## Remaining Work
