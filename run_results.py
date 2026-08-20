@@ -339,6 +339,20 @@ def main():
         for n, r in rows.items()
     }).T
 
+    # ---- exports for run_stress.py (stress testing + inference) ----
+    config.RESULTS_DIR.mkdir(exist_ok=True)
+    returns_wide = pd.DataFrame({n: r.returns for n, r in rows.items()})
+    returns_wide.to_csv(config.RESULTS_DIR / "monthly_returns.csv")
+
+    wrows = []
+    for n, r in rows.items():
+        w = r.weights.iloc[-1].dropna()
+        w = w[w > 0]
+        for pid, wt in w.items():
+            wrows.append({"scheme": n, "id": pid, "weight": float(wt)})
+    pd.DataFrame(wrows).to_csv(config.RESULTS_DIR / "latest_weights.csv", index=False)
+    print(f"wrote {config.RESULTS_DIR / 'monthly_returns.csv'} and latest_weights.csv")
+
     sweeps = {}
     if args.sweeps:
         print("\nrunning cost sweep...")
