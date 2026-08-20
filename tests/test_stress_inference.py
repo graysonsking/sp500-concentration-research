@@ -3,8 +3,8 @@ import numpy as np
 import pandas as pd
 import pytest
 
-import stress
-import inference
+import src stress
+import src inference
 
 
 def _series(vals, start="2000-01-31"):
